@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0c974715784b6744ba1de8b4b3887cb3
+timeCreated: 1681894625
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cherry Bird
+  fontNames:
+  - Cherry Bird
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
