@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VardaParadisana : MonoBehaviour {
-	public int kadruSk = 0;
+	private string teksts;
+	public GameObject ievadesLauks;
+	public GameObject tekstaAttelosana;
+	private string[] fragmenti = {"Sveiks ", 
+		"Jauku dienu ", "Prieks Tevi redzēt ", 
+		"Uzredzēšanos"};
+	int indekss;
 
-	void Start () {
-		Debug.Log("Uzsākta programma! Tu esi "
-			+kadruSk+" kadrā");
-	}
-	
-	void Update () {
-		Debug.Log("Kadrs: "+kadruSk);
-		kadruSk++;
+	public void UzglabatTekstu()
+	{
+		indekss = Random.Range(0, fragmenti.Length);
+		teksts = ievadesLauks.GetComponent<InputField>().text;
+		tekstaAttelosana.GetComponent<Text>().text = 
+			fragmenti[indekss]+teksts.ToUpper()+"!";
 	}
 }
