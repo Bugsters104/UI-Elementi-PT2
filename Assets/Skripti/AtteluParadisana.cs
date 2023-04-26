@@ -4,25 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AtteluParadisana : MonoBehaviour {
-	public GameObject binsImg;
-	public GameObject lacitisImg;
-	public GameObject omeImg;
-	public GameObject masinaImg;
+    public GameObject binsImg;
+    public GameObject lacitisImg;
+    public GameObject omeImg;
+    public GameObject masinaImg;
     public GameObject paKreisiPoga;
     public GameObject paLabiPoga;
     public GameObject mainigaisAttels;
     public Sprite[] atteluMasivs;
+    public GameObject izmSlaideris;
+    public GameObject rotSlaideris;
 
-	public void binaAttelosana(bool vertiba)
-	{
-		binsImg.SetActive(vertiba);
+    public void binaAttelosana(bool vertiba)
+    {
+        binsImg.SetActive(vertiba);
         paKreisiPoga.GetComponent<Toggle>().interactable = vertiba;
         paLabiPoga.GetComponent<Toggle>().interactable = vertiba;
     }
 
     public void lacisaAttelosana(bool vertiba)
     {
-		lacitisImg.SetActive(vertiba);
+        lacitisImg.SetActive(vertiba);
     }
 
     public void omesAttelosana(bool vertiba)
@@ -61,5 +63,21 @@ public class AtteluParadisana : MonoBehaviour {
 
         else
             Debug.Log("Nav piesaistīts attēls!");
+    }
+
+    public void mainitLielumu()
+    {
+        float pasreizejaVertiba =
+            izmSlaideris.GetComponent<Slider>().value;
+        mainigaisAttels.transform.localScale =
+        new Vector2(1f * pasreizejaVertiba, 1f * pasreizejaVertiba);
+    }
+
+    public void mainitRotaciju()
+    {
+        float pasreizejaVertiba =
+            rotSlaideris.GetComponent<Slider>().value;
+        mainigaisAttels.transform.localRotation =
+            Quaternion.Euler(0, 0, pasreizejaVertiba * 360);
     }
 }
